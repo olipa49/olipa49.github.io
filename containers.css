@@ -1,0 +1,17 @@
+.line-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.button-container {
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-evenly;
+}

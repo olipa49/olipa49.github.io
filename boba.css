@@ -1,0 +1,60 @@
+/* Кнопка выпадающего списка */
+.dropbtn {
+    cursor: pointer;
+    border: none;
+    background-color: inherit;
+    width: 100%;
+}
+
+/* Выпадающее содержимое (скрыто по умолчанию) */
+.dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s;
+}
+
+
+/* Показать выпадающее меню (использовать JS, чтобы добавить этот класс .dropdown-content содержимого, когда пользователь нажимает на кнопку выпадающего списка) */
+@supports (interpolate-size: allow-keywords) {
+    * {
+        interpolate-size: allow-keywords;
+    }
+
+    .show {
+        max-height: max-content;
+        transition: max-height 1s;
+    }
+}
+
+@supports not (interpolate-size: allow-keywords) {
+    .show {
+        max-height: 200px;
+        transition: max-height 1s;
+    }
+}
+
+.mod {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.point {
+    width: 20px;
+    height: 20px;
+}
+
+/* обозначения кружками выбранной модели */
+.circle {
+    margin-left: 10px;
+    width: 15px;
+    height: 15px;
+    -moz-border-radius: 60px;
+    -webkit-border-radius: 60px;
+    border-radius: 60px;
+}
+
+.button {
+    margin-right: 10px;
+}

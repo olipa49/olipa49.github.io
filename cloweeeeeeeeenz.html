@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="stylelikeaclown.css">
+    <link rel="stylesheet" href="containers.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1 class="hh borderus shapka">ИИ-ассистент для учёбы</h1>
+    </header>
+    <div class="line-container">
+        <div class="column-container">
+            <h2 class="hh"></h2>
+            <textarea class="text borderus shadowus" id="left" placeholder="Введите текст..."></textarea>
+            <div class="button-container">
+                <button class="all-button" id="button1" title="Озвучить текст" onclick="speakText1()"></button>
+                <button class="all-button" id="button2" title="Выбрать файл" onclick=""></button>
+                <button class="all-button" id="button3" title="Запись" onclick=""></button>
+                <button class="all-button" id="button4" title="Удалить" onclick="del()"></button>
+                <button class="all-button" id="button5" title="Копировать" onclick="copyy()"></button>
+            </div>
+        </div>
+
+        <div class="column-container" id="middle">
+            <div class="line-container shadowus middle-button borderus sokr-container">
+                <button class="left-button sokr_knopka">
+                    <h2>Сократить текст на <input oninput="sync1()" class="borderus" type="number" id="number" min=10 max=90 value="52" readonly>  %</h2><br>
+                    <input oninput="sync2()" type="range" id="range" step="5" min=10 max=90 value="52">
+                </button>
+                <button class="right-button sokr_knopka" id="sent" onclick="apisokr()">
+                </button>
+            </div>
+            <button class="middle-button borderus shadowus" onclick="apiper()"><h2>Перефразировать</h2></button>
+        </div>
+
+        <div class="column-container">
+            <h2 class="hh"></h2>
+            <textarea class="text borderus shadowus" id="right" readonly placeholder="Ответ ИИ..."></textarea>
+            <div class="button-container">
+                <button class="all-button" id="button6" title="Озвучить текст" onclick="speakText2()"></button>
+                <button class="all-button" id="button7" title="Копировать" onclick="copyy2()"></button>
+                <button class="all-button" id="button8" title="Шпаргалка" onclick=""></button>
+            </div>
+        </div>
+    </div>
+    <script src="whatisjs.js"></script>
+</body>
+</html>

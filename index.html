@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="ИИ-ассистент для учёбы 📚✍📜">
+    <meta property="og:description" content="Пригодится для сокращения и перефразирования текстов">
+    <meta property="og:image" content="ogimg.jpg">
+    <link rel="stylesheet" href="stylelikeaclown.css">
+    <link rel="stylesheet" href="containers.css">
+    <link rel="stylesheet" href="boba.css">
+    <link rel="stylesheet" href="navy.css">
+    <link rel="icon" href="12400897.png" type="image/x-icon">
+    <title>ИИ-ассистент</title>
+
+
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(99466752, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/99466752" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+</head>
+
+<body class="light">
+    <div id="preload">
+        <div id="pre1"></div>
+        <div id="pre2"></div>
+        <div id="pre3"></div>
+        <div id="pre4"></div>
+        <div id="pre5"></div>
+        <div id="pre6"></div>
+    </div>
+    <div id="bg"></div>
+    <div id="alert"><h2>Скопировано</h2></div>
+    
+    <div class="center" id="contacts-center">
+        <div id="contacts-div" class="borderus">
+            <!--vvv Тута контакты vvv-->
+            <div id="close-contacts-button" onclick="close_contacts()">Закрыть</div>
+            <h1>Контакты</h1>
+            <div class="kontakts">
+                <a href="https://t.me/TrueClowen" target="_blank">
+                    <img src="Logo.png" class="contacts_logo">
+                </a>
+                <a href="https://t.me/TrueClowen" target="_blank">
+                    <h2>Telegram</h2>
+                </a></div>
+            <div class="kontakts">
+                <a href="https://vk.com/iolipa" target="_blank">
+                    <img src="VK Logo.png" class="contacts_logo">
+                </a>
+                <a href="https://vk.com/iolipa" target="_blank">
+                    <h2>ВКонтакте</h2>
+                </a></div>
+            <!--^^^ Тута контакты ^^^-->
+        </div>
+    </div>
+    <div class="center" id="auth-center">
+        <div id="auth-div" class="borderus">
+            <!--vvv Тута интефейс входа vvv-->
+            <div id="close-auth-button" onclick="close_auth()">Закрыть</div>
+            <h1>Войти</h1>
+            <div>
+                <h2>Введите email</h2>
+                <input class="borderus vhod" type="email" />
+            </div>
+            <div>
+                <h2>Введите пароль</h2>
+                <input id="password" class="borderus vhod" type="password">
+                <img id="shownes" src="sdvg\EyeClosed.svg" onclick="passwording()">
+            </div>
+            <button class="borderus shadowus"
+                style="padding: 10px; margin-top: 20px; font-size: 18px;">Продолжить</button>
+            <!--^^^ До сюда ^^^-->
+        </div>
+    </div>
+    <div class="center" id="guide-center">
+        <div id="guide-div" class="borderus text" style="height: 70%; width: 60%; overflow-y: scroll;">
+            <div id="close-guide-button" onclick="close_guide()">Закрыть</div>
+            <h1>Как пользоваться сайтом:</h1>
+            <ol>
+                <li>Ввести текст, который вы хотите сократить или перефразировать, в левую панель (голубого цвета).</li>
+                <li>Выбрать, насколько вы хотите сократить текст (выбирать с помощью ползунка), если вы хотите сократить
+                    текст. Иначе можете пропустить данный пункт.</li>
+                <li>Нажать стрелочку (для сокращения текста) или кнопку «Перефразировать» (для перефразирования текста).
+                </li>
+            </ol>
+            <h1>Дополнительные функции (кнопки под полями):</h1>
+            <ol>
+                <li>Озвучивание текста</li>
+                <li>Выбор видео или аудио файла для распознавания речи</li>
+                <li>Вставить случайный текст из базы ОГЭ</li>
+                <li>Удалить текст из поля</li>
+                <li>Копировать текст из поля</li>
+            </ol>
+            <h1>Выбор модели:</h1>
+            <p style="text-align: left;">Вы можете выбрать одну из двух предложенный моделей нейросети</p>
+            <h1>Остальные настройки:</h1>
+            <ol>
+                <li>Выбор модели при помощи кнопки посередине</li>
+                <li>Выбор темы (светлая или тёмная)</li>
+            </ol>
+            <h1>Прочие функции:</h1>
+            <ol>
+                <li>Сохранение истории запросов (автоматически)</li>
+            </ol>
+        </div>
+    </div>
+    <header class="borderus shapka hoverus">
+        <div id="shapka-vniz">
+            <h1 onclick="open_contacts()">Контакты</h1>
+            <a href="https://github.com/olipa49/Pages" style="text-decoration: none;" target="_blank">
+                <h1>GitHub</h1>
+            </a>
+            <h1 onclick="open_auth()">Вход Регистрация</h1>
+            <div class="header-theme-container">
+                <p id="theme-z">Тема</p>
+                <span>Светлая</span>
+                <label class="toggle">
+                    <input type="checkbox" id="theme_input">
+                    <div class="toggler" onclick="squid_theme()"></div>
+                </label>
+                <span>Тёмная</span>
+            </div>
+        </div>
+        <div class="header-line">
+            <img class="header-line-img" src="sdvg\Menu.svg">
+            <div id="name">
+                <h1 class="hh">ИИ-ассистент для учёбы</h1>
+                <img id="title_image" src="sdvg/QuestionCircleOutlined.svg" onclick="open_guide()">
+            </div>
+            <img class="header-line-img" src="sdvg\RoundLogin.svg">
+        </div>
+    </header>
+
+
+
+    <div class="line-container main">
+        <div class="column-container">
+            <textarea class="text borderus shadowus" id="left" placeholder="Введите текст..."></textarea>
+            <div class="borderus checking_files shadowus" id="file"><img
+                    src="https://ssl.gstatic.com/translate/drag_and_drop.png" aria-hidden="true" class="photo" alt="">
+                <h2>Перетащите сюда файл</h2>
+                <h2 id="tipassilka" onclick="fileokno()"><u>или выберите с устройства</u></h2>
+                <input type="file" id="fileinput" accept=".wav">
+                <button id="confirm_button" onclick="uploadwav()">Отправить файл</button>
+            </div>
+            <div class="button-container">
+                <div class="hover-btn-cont"><button class="all-button" id="button1" title="Озвучить текст"
+                        onclick="speakText1()"></button></div>
+                <div class="hover-btn-cont"><button class="all-button" id="button2" title="Выбрать файл"
+                        onclick="files()"></button></div>
+                <div class="hover-btn-cont"><button class="all-button" id="button3" title="Случайный текст"
+                        onclick="random_text()"></button></div>
+                <div class="hover-btn-cont"><button class="all-button" id="button4" title="Удалить"
+                        onclick="del()"></button></div>
+                <div class="hover-btn-cont"><button class="all-button" id="button5" title="Копировать"
+                        onclick="copyy()"></button></div>
+            </div>
+        </div>
+
+
+        <!-- Серединка -->
+        <div class="column-container" id="middle">
+            <div class="line-container shadowus middle-button borderus sokr-container">
+                <button class="left-button sokr_knopka">
+                    <h2>Сократить текст на <input oninput="sync1()" class="borderus" type="number" id="number" min=10
+                            max=90 value="52" readonly> %</h2><br>
+                    <input oninput="sync2()" type="range" id="range" step="5" min=10 max=90 value="52">
+                </button>
+
+                <button class="right-button sokr_knopka" id="sent" onclick="apisokr()">
+                </button>
+            </div>
+
+
+            <button id="perefrazirovatt" class="middle-button borderus shadowus active" onclick="apiper()">
+                <h2>Перефразировать</h2>
+            </button>
+            <div class="borderus shadowus">
+                <div class="dropdown">
+                    <button class="dropbtn" onclick="myFunction()">
+                        <h2 class="dropbtn" id="modelname">Выпадающий</h2>
+                    </button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <div class="mod" onclick="set_mod1()">
+                            <div class="circle" id="cir1"></div>
+                            <h3 style="padding-inline: 10px;">QwQ-32B-Preview</h3>
+                        </div>
+                        <div class="mod" onclick="set_mod2()">
+                            <div class="circle" id="cir2"></div>
+                            <h3 style="padding-inline: 10px;">Qwen2.5-0.5B</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="column-container">
+            <textarea class="text borderus shadowus" id="right" readonly placeholder="Ответ ИИ..."></textarea>
+            <div class="button-container">
+                <div class="hover-btn-cont"><button class="all-button" id="button7" title="Копировать"
+                        onclick="copyy2()"></button></div>
+                <div class="hover-btn-cont"><button class="all-button" id="button6" title="Озвучить текст"
+                        onclick="speakText2()"></button></div>
+                <div class="hover-btn-cont"><button class="all-button" id="button8" title="Шпаргалка"
+                        onclick=""></button></div>
+            </div>
+        </div>
+    </div>
+    <div class="history_container">
+        <h1>История запросов</h1>
+        <button onclick="history_clear()" class="borderus active shadowus middle-button">
+            <h1>Очистить</h1>
+        </button>
+        <div id="history">
+            <!--
+            <div class="article active shadowus middle-button borderus" onclick="history_paste(this)">
+                <img src="sdvg/Edit16Filled.svg">
+                
+                <span>Иметь семью и детей так же необходимо и естественно, как необходимо и естественно трудиться. Семья издавна скреплялась нравственным авторитетом отца, который традиционно считался главой. Отца дети уважали и слушались. Он занимался сельхозработами, строительством, заготовкой леса и дров. Всю тяжесть крестьянского труда с ним разделяли взрослые сыновья. Руководство домашним хозяйством было в руках жены и матери. Она ведала всем в доме: присматривала за скотом, заботилась о питании, об одежде. Все эти работы она делала не одна: даже дети, едва научившись ходить, понемногу, вместе с игрой, начинали делать что-то полезное. Доброта, терпимость, взаимное прощение обид перерастали в хорошей семье во взаимную любовь. Сварливость и неуживчивость считались наказанием судьбы и вызывали жалость к их носителям. Надо было уметь уступить, забыть обиду, ответить добром или промолчать. Любовь и согласие между родственниками давали начало любви за пределами дома. От человека, не любящего и не уважающего своих родных, трудно ждать уважения к другим людям.</span>
+                <div class="shadow-down"></div>
+                <button class="history_down_btn" onclick="history_down(this)"></button>
+            </div>-->
+        </div>
+    </div>
+    <script src="whatisjs.js"></script>
+    <script src="sss.js"></script>
+    <script src="random_text.js"></script>
+</body>
+
+</html>
