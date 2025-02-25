@@ -416,7 +416,7 @@ input[type=email] {
     cursor: pointer;
 }
 #alert {
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: color-mix(in srgb, var(--color) 80%, transparent 20%);;
     position: fixed;
     bottom: 20px;
     left: 50%;

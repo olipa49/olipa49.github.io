@@ -1,32 +1,37 @@
 var url_ip = "http://127.0.0.1:8000";
+var msgcount = 0;
+function dob_msg(mssg) {
+    var alert = document.getElementById('alert');
+    alert.querySelector('*').innerText = mssg;
+    alert.style.display = 'block';
+    msgcount += 1;
+    setTimeout(() => {
+        if (msgcount == 1) {
+            alert.style.display = 'none', 2000;
+        }
+        msgcount -= 1;
+    }, 2000)
+}
 //var url_ip = "https://magical-gecko-trivially.ngrok-free.app";
 function copyy() {
     var text = document.getElementById("left");
     text.select();
     document.execCommand("copy");
     document.getSelection().removeAllRanges();
-    var alert = document.getElementById('alert');
-    alert.querySelector('*').innerText = "Скопировано";
-    alert.style.display = 'block';
-    setTimeout(() => alert.style.display = 'none', 2000)
+    dob_msg("Скопировано");
+
 }
 function copyy2() {
     var text = document.getElementById("right");
     text.select();
     document.execCommand("copy");
     document.getSelection().removeAllRanges();
-    var alert = document.getElementById('alert');
-    alert.querySelector('*').innerText = "Скопировано";
-    alert.style.display = 'block';
-    setTimeout(() => alert.style.display = 'none', 2000)
+    dob_msg("Скопировано");
 }
 function del() {
     var val = document.getElementById("left");
     val.value = '';
-    var alert = document.getElementById('alert');
-    alert.querySelector('*').innerText = "Очищено";
-    alert.style.display = 'block';
-    setTimeout(() => alert.style.display = 'none', 2000)
+    dob_msg("Очищено");
 }
 
 function cend(t_str) {
@@ -35,36 +40,33 @@ function cend(t_str) {
     update_storage(val);
     var text = document.getElementById("right");
 
-    var alert = document.getElementById('alert');
-    alert.querySelector('*').innerText = "Отправлено";
-    alert.style.display = 'block';
-    setTimeout(() => alert.style.display = 'none', 2000)
-    
+    dob_msg("Отправлено");
+
     /*fetch(`http://localhost:8000/${pole}/${val}`, {mode: "no-cors"});*/
     /*query({"inputs": `Сократи следующий текст на ${pole} процентов:\n${val}. \n Сокращённый текст на русском языке: `}).then((response) => {
         str = JSON.stringify(response)
         text.innerHTML = "" + str.slice(40 + val.length, -3);
     });*/
     var len = t_str.length;
-        var res = fetch(
-            neromodel,
-            {
-                headers: {
-                    Authorization: "Bearer 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",
-                    "Content-Type": "application/json",
-                },
-                method: "POST",
-                body: JSON.stringify({ "inputs": t_str}),
-            }
-    ).then(res => {if (!response.ok) {
-        throw new Error('Error occurred!')
-      } res.json()})
+    var res = fetch(
+        neromodel,
+        {
+            headers: {
+                Authorization: "Bearer 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",
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: JSON.stringify({ "inputs": t_str }),
+        }
+    ).then((res) => {
+        if (!res.ok) {
+            throw new Error('Error occurred!');
+        }
+        return res.json();
+    })
         .then(data => data[0])
         .then(dat => text.innerHTML = dat.generated_text.slice(len + 1)).catch((err) => {
-            var alert = document.getElementById('alert');
-        alert.querySelector('*').innerText = 'Повторите запрос ещё раз или используйте другую модель\n' + err;
-        alert.style.display = 'block';
-        setTimeout(() => alert.style.display = 'none', 2000)
+            dob_msg('Повторите запрос ещё раз или используйте другую модель\n' + err);
         });
 }
 function apisokr() {
@@ -183,10 +185,7 @@ function uploadwav() {
             headers: { "Content-Type": "application/json", "ngrok-skip-browser-warning": "true" }
         })
     }
-    var alert = document.getElementById('alert');
-    alert.querySelector('*').innerText = "Отправка файла...";
-    alert.style.display = 'block';
-    setTimeout(() => alert.style.display = 'none', 2000)
+    dob_msg("Отправка файла...");
     reader.readAsText(fileinput.files[0]);
 }
 
@@ -220,17 +219,14 @@ function history_clear() {
 function history_down(el) {
     var parent = el.parentNode;
     parent.classList.add('show_p');
-    parent.querySelectorAll('.shadow-down, .history_down_btn').forEach(function(elem) {elem.remove()})
+    parent.querySelectorAll('.shadow-down, .history_down_btn').forEach(function (elem) { elem.remove() })
 }
 function history_paste(el) {
     if (el.target.matches('span')) {
         var val = document.getElementById("left");
         val.value = el.target.innerText;
     }
-    var alert = document.getElementById('alert');
-    alert.querySelector('*').innerText = "Вставено в поле";
-    alert.style.display = 'block';
-    setTimeout(() => alert.style.display = 'none', 2000)
+    dob_msg("Вставено в поле");
 }
 function random_text() {
     document.getElementById("left").value = texts[Math.floor((Math.random() * texts.length))];
